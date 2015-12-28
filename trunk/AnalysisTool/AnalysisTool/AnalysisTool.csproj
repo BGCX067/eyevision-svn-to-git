@@ -1,0 +1,188 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0E3E7188-F12F-42A3-90DF-30C553C0084F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AnalysisTool</RootNamespace>
+    <AssemblyName>AnalysisTool</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnalysisToolGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnalysisToolGUI.Designer.cs">
+      <DependentUpon>AnalysisToolGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ATLogicException.cs" />
+    <Compile Include="ATUtil.cs" />
+    <Compile Include="XML2XLS.cs" />
+    <Compile Include="CreateGazeFiles.cs" />
+    <Compile Include="DisplayFileCreation.cs" />
+    <Compile Include="DisplayFileParser.cs" />
+    <Compile Include="DisplayFormPreferences.cs" />
+    <Compile Include="DoubleBufferReplayControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DoubleBufferReplayControl.designer.cs">
+      <DependentUpon>DoubleBufferReplayControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FolderSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GazeDataWorker.cs" />
+    <Compile Include="ObjectData.cs" />
+    <Compile Include="ObjectDataWorker.cs" />
+    <Compile Include="ObjPositionData.cs" />
+    <Compile Include="PerformanceFileCreation.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AnalysisToolGUI.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AnalysisToolGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoubleBufferReplayControl.resx">
+      <DependentUpon>DoubleBufferReplayControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="folderSelect.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FolderSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReplayGraphics.resx">
+      <DependentUpon>ReplayGraphics.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReplayUserControlDialogFrm.resx">
+      <DependentUpon>ReplayUserControlDialogFrm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaitMessageForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>WaitMessageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="bin\Debug\DisplayFileSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bin\Debug\DisplayFileSchema.xsx">
+      <DependentUpon>DisplayFileSchema.xsd</DependentUpon>
+    </None>
+    <None Include="bin\Release\DisplayFileSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DisplayFileSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DisplayFileSchema.xsx">
+      <DependentUpon>DisplayFileSchema.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ReplayGraphics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReplayGraphics.designer.cs">
+      <DependentUpon>ReplayGraphics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReplayTrial.cs" />
+    <Compile Include="ReplayUserControlDialogFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReplayUserControlDialogFrm.designer.cs">
+      <DependentUpon>ReplayUserControlDialogFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WaitMessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitMessageForm.Designer.cs">
+      <DependentUpon>WaitMessageForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="gaze.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Release\AnalysisTool.exe" />
+    <Content Include="bin\Release\AnalysisTool.pdb" />
+    <Content Include="bin\Release\AnalysisTool.vshost.exe" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

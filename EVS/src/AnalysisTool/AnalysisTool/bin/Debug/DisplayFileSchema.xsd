@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DisplayFileSchema" targetNamespace="http://tempuri.org/DisplayFileSchema.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/DisplayFileSchema.xsd" xmlns:mstns="http://tempuri.org/DisplayFileSchema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="DisplayFileStart">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Trial">
+          <xs:complexType>
+            <xs:sequence />
+            <xs:attribute name="name" type="xs:string" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Display">
+          <xs:complexType>
+            <xs:attribute name="X" type="xs:unsignedInt" />
+            <xs:attribute name="Y" type="xs:unsignedInt" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Condition">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Obj">
+                <xs:complexType>
+                  <xs:sequence/>
+                  <xs:attribute name="name" type="xs:string" />
+                  <xs:attribute name="ObjectFilePath" type="xs:string" />
+                  <xs:attribute name="IsTargetObject" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="Num" type="xs:unsignedInt" />
+            <xs:attribute name="GridDisplay" type="xs:unsignedInt" />
+            <xs:attribute name="BGA" type="xs:unsignedInt" />
+            <xs:attribute name="BGR" type="xs:unsignedInt" />
+            <xs:attribute name="BGG" type="xs:unsignedInt" />
+            <xs:attribute name="BGB" type="xs:unsignedInt" />
+            <xs:attribute name="FGA" type="xs:unsignedInt" />
+            <xs:attribute name="FGR" type="xs:unsignedInt" />
+            <xs:attribute name="FGG" type="xs:unsignedInt" />
+            <xs:attribute name="FGB" type="xs:unsignedInt" />
+            <xs:attribute name="NumObjects" type="xs:unsignedInt" />
+            <xs:attribute name="NumTargets" type="xs:unsignedInt" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TrialStart">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="Time">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="obj">
+                      <xs:complexType>
+                        <xs:sequence/>
+                        <xs:attribute name="name" type="xs:string" />
+                        <xs:attribute name="x" type="xs:string" />
+                        <xs:attribute name="y" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="stamp" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SubjectTargetStart">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="Obj">
+                <xs:complexType>
+                  <xs:sequence/>
+                  <xs:attribute name="name" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+    </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

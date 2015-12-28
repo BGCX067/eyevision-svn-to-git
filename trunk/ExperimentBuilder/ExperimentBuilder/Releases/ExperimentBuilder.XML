@@ -1,0 +1,849 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ExperimentBuilder</name>
+    </assembly>
+    <members>
+        <member name="T:ExperimentBuilder.SessionForm">
+            <summary>
+            Displays window where experiment data can be entered. 
+            </summary>
+        </member>
+        <member name="F:ExperimentBuilder.SessionForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ExperimentBuilder.SessionForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ExperimentBuilder.SessionForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:ExperimentBuilder.SessionForm.AddButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Opens a trial form to add a new block of trial to the List. 
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.SessionForm.updateTrialList">
+            <summary>
+            Updates the list of trials with current experiment data. 
+            </summary>
+        </member>
+        <member name="M:ExperimentBuilder.SessionForm.trialListView_DoubleClick(System.Object,System.EventArgs)">
+            <summary>
+            Opens a new trial form. 
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.SessionForm.generateButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Starts the Generation process of the session files. Opens a new NameForm object. After succesful creation,
+            a MessageBox will pop up and inform the user about this. 
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.SessionForm.checkButtonsTimer_Tick(System.Object,System.EventArgs)">
+            <summary>
+            Checks regulary if the generate Button can be enable (that means, that enough data is entered. 
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.SessionForm.saveToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Calls the save or save-as function, depending if a filename is defined. 
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.SessionForm.saveAsToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Calls the save-as function, after displaying the save-as file dialog.
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.SessionForm.loadToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Displays the open-file dialog and load the experiment data in this file. 
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ExperimentBuilder.SessionForm.deleteToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Calls the delete-Function for the selected object.
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.SessionForm.deleteSelectedItem">
+            <summary>
+            Deletes the selected item from the experiment-List.
+            </summary>
+        </member>
+        <member name="M:ExperimentBuilder.SessionForm.swapTrials(System.Int32,System.Int32)">
+            <summary>
+            Swaps two trial blocks. 
+            </summary>
+            <param name="trialPosition1">Trial to be swapped</param>
+            <param name="trialPosition2">Trial to be swapped</param>
+        </member>
+        <member name="M:ExperimentBuilder.SessionForm.upButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Calls the "Moves the selected object up"-function
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.SessionForm.downButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Calls the "Moves the selected object down"-function. 
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ExperimentBuilder.SessionForm.moveSelectedDown">
+            <summary>
+            Moves the selected object down
+            </summary>
+        </member>
+        <member name="M:ExperimentBuilder.SessionForm.deleteButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Calls delete-function for the selected item.
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.SessionForm.upToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Calls moveup-function for selected trial block. 
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.SessionForm.moveSelectedUp">
+            <summary>
+            Moves the selected trial block up (if possible.)
+            </summary>
+        </member>
+        <member name="M:ExperimentBuilder.SessionForm.downToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Calls movedown-function for selected trial block. 
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.SessionForm.infoToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Shows the about form when clicked in the toolstrip.
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.SessionForm.closeToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Close the application when clicked in the toolstrip. 
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.SessionForm.trialListView_SelectedIndexChanged(System.Object,System.EventArgs)">
+            <summary>
+            Calls the check-function when the selection changes. 
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.SessionForm.checkUpDownDelete">
+            <summary>
+            Check which buttons can be displayed
+            </summary>
+        </member>
+        <member name="P:ExperimentBuilder.SessionForm.Experiment">
+            <summary>
+            The experiment data object. 
+            </summary>
+        </member>
+        <member name="T:ExperimentBuilder.FileGenerator">
+            <summary>
+            Generates files for the Experiment Builder. It serializes the experiment objects (and its dependenants) in a file and generates 
+            the XML file for the Graphics Engine. 
+            </summary>
+        </member>
+        <member name="M:ExperimentBuilder.FileGenerator.generateSessionFiles(ExperimentBuilder.ExperimentDescriptor)">
+            <summary>
+            Generate the Session files in the specified experiment folder. 
+            </summary>
+            <param name="experiment">The experiment object containing all the experiment data.</param>
+            <returns>True if the file generation was succesful.</returns>
+        </member>
+        <member name="M:ExperimentBuilder.FileGenerator.saveExperiment(ExperimentBuilder.ExperimentDescriptor,System.String)">
+            <summary>
+            Serializes the experiment object in a file.
+            </summary>
+            <param name="experiment">Experiment object to be serialized</param>
+            <param name="fileName">The file name for the object. </param>
+            <returns>True when the generation was succesful.</returns>
+        </member>
+        <member name="M:ExperimentBuilder.FileGenerator.loadExperiment(System.String)">
+            <summary>
+            Loads a serialized experiment object
+            </summary>
+            <param name="fileName">File name of the experiment object to load.</param>
+            <returns>The experiment object that has been loaded.</returns>
+        </member>
+        <member name="M:ExperimentBuilder.FileGenerator.createBMP(System.String,System.Int32,System.Int32,System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Creates an image. Two shapes can be created: "Ellipse/Circles" or "Squares/Rectangle".
+            </summary>
+            <param name="type">Either "Rectangle" or "Ellipse".</param>
+            <param name="x">Either the width of the rectangle or the x-radius of the ellipse.</param>
+            <param name="y">Either the height of the rectangle or the y-radius of the ellipse. </param>
+            <param name="color">The foreground color for the object.</param>
+            <param name="backcolor">The background color of the object.(Only useful for ellipses).</param>
+            <returns>The created image. </returns>
+        </member>
+        <member name="M:ExperimentBuilder.FileGenerator.createDefaultDir">
+            <summary>
+            Creates the default Directory, if it doesn't exist. 
+            </summary>
+        </member>
+        <member name="M:ExperimentBuilder.FileGenerator.createSubDirs">
+            <summary>
+            Creates all the subdirs, if they are not already existing. 
+            </summary>
+        </member>
+        <member name="M:ExperimentBuilder.FileGenerator.#ctor">
+            <summary>
+            Private Constructor. Use getInstance to get an Instance of this object. 
+            </summary>
+        </member>
+        <member name="M:ExperimentBuilder.FileGenerator.getInstance">
+            <summary>
+            Return the actual instance of the object. If no instance exists, a new one will be generated. There can
+            be no more than one instance at a time of this object. 
+            </summary>
+            <returns>The actual instance of the FileGenerator</returns>
+        </member>
+        <member name="P:ExperimentBuilder.FileGenerator.DefaultDir">
+            <summary>
+            The default dir where all files and folders are supposed to be generated by the Experiment Builder. Set to C:\EVS\
+            </summary>
+        </member>
+        <member name="P:ExperimentBuilder.FileGenerator.SubDir">
+            <summary>
+            The list of sub directories the Exeriment Builder generates. Set to bin,doc,ext,include
+            </summary>
+        </member>
+        <member name="P:ExperimentBuilder.FileGenerator.ExperimentDir">
+            <summary>
+            The directory where the experiments are stored. Set to experiments
+            </summary>
+        </member>
+        <member name="P:ExperimentBuilder.FileGenerator.SessionDirPrefix">
+            <summary>
+            The Prefix for all Session Files. Set to Sess
+            </summary>
+        </member>
+        <member name="P:ExperimentBuilder.FileGenerator.PerfDir">
+            <summary>
+            The folder that contains the performance files. Set to perf
+            </summary>
+        </member>
+        <member name="P:ExperimentBuilder.FileGenerator.ImageSubDir">
+            <summary>
+            The folder that contains the images. Set to images
+            </summary>
+        </member>
+        <member name="T:ExperimentBuilder.TrialForm">
+            <summary>
+            This class display the window for entering trial data for a block trial data. 
+            </summary>
+        </member>
+        <member name="M:ExperimentBuilder.TrialForm.#ctor">
+            <summary>
+            A new Trial Form
+            </summary>
+        </member>
+        <member name="M:ExperimentBuilder.TrialForm.#ctor(ExperimentBuilder.SessionForm)">
+            <summary>
+            A new trial Form.
+            </summary>
+            <param name="sessionForm">The sessionForm which invoked this form.</param>
+        </member>
+        <member name="M:ExperimentBuilder.TrialForm.#ctor(ExperimentBuilder.SessionForm,System.Int32)">
+            <summary>
+            A new trial Form. This constructor is used if an existing block of trial are subject to change.
+            </summary>
+            <param name="sessionForm">The sessionForm which invoked this form.</param>
+            <param name="editNumber">The trial block number that has to be changed.</param>
+        </member>
+        <member name="M:ExperimentBuilder.TrialForm.TrialForm_Load(System.Object,System.EventArgs)">
+            <summary>
+            Initialisation of the trial form. 
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.TrialForm.numberComboBox_SelectedIndexChanged(System.Object,System.EventArgs)">
+            <summary>
+            Updates the GUI when the number of objects for a trial block is changed. 
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.TrialForm.updateObjectList(System.Int32)">
+            <summary>
+            Updates the Object List. Is called when the number of objects for a trial block is changed.  
+            </summary>
+            <param name="max"></param>
+        </member>
+        <member name="M:ExperimentBuilder.TrialForm.OKButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Adds the trial to the session Form list. (Or changes an existing one)
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ExperimentBuilder.TrialForm.OKButtonTimer_Tick(System.Object,System.EventArgs)">
+            <summary>
+            Check if all necessary form fields are filled with correct values - if they are filled, enable the OK-Button.
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.TrialForm.bouncingCheckBox_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Activates the text Box for Bouncing distance when bouncing is enabled. 
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.TrialForm.typeComboBox_SelectedIndexChanged(System.Object,System.EventArgs)">
+            <summary>
+            Changes GUI appearance corresponding to the object type selected. 
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.TrialForm.selectFileButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Open a file dialog for the BMP-File. 
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.TrialForm.nextButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Next object button clicked.
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.TrialForm.prevButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Previous object button clicked
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.TrialForm.checkButtonStatus">
+            <summary>
+            Changes which object is displayed in the GUI.
+            </summary>
+        </member>
+        <member name="M:ExperimentBuilder.TrialForm.targetObjectCheckBox_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Stores changes of objects in object list. 
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.TrialForm.minSpeedHorizontalTextBox_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Stores changes of objects in object list. 
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.TrialForm.minSpeedVerticalTextBox_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Stores changes of objects in object list. 
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.TrialForm.maxSpeedHorizontalTextBox_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Stores changes of objects in object list. 
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.TrialForm.maxSpeedVerticalTextBox_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Stores changes of objects in object list. 
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.TrialForm.panel1RadioButton_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Stores changes of objects in object list. 
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.TrialForm.panel2RadioButton_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Stores changes of objects in object list. 
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.TrialForm.panel3RadioButton_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Stores changes of objects in object list. 
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.TrialForm.panel4RadioButton_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Stores changes of objects in object list. 
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.TrialForm.CancelButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Closes the window.
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.TrialForm.widthTextBox_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Stores changes of objects in object list. 
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.TrialForm.heightTextBox_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Stores changes of objects in object list. 
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.TrialForm.backgroundPictureBox_Click(System.Object,System.EventArgs)">
+            <summary>
+            Display color Chooser for background color. 
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.TrialForm.colorPictureBox_Click(System.Object,System.EventArgs)">
+            <summary>
+            Display color chooser for object color. 
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.TrialForm.foregroundColorPictureBox_Click(System.Object,System.EventArgs)">
+            <summary>
+            Display color chooser for foreground color. 
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.TrialForm.minSpeedHorizontalTextBox_Click(System.Object,System.EventArgs)">
+            <summary>
+            Selects all data when text box is clicked. 
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.TrialForm.minSpeedVerticalTextBox_Click(System.Object,System.EventArgs)">
+            <summary>
+            Selects all data when text box is clicked. 
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.TrialForm.maxSpeedHorizontalTextBox_Click(System.Object,System.EventArgs)">
+            <summary>
+            Selects all data when text box is clicked. 
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.TrialForm.maxSpeedVerticalTextBox_Click(System.Object,System.EventArgs)">
+            <summary>
+            Selects all data when text box is clicked. 
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.TrialForm.widthTextBox_Click(System.Object,System.EventArgs)">
+            <summary>
+            Selects all data when text box is clicked. 
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.TrialForm.heightTextBox_Click(System.Object,System.EventArgs)">
+            <summary>
+            Selects all data when text box is clicked. 
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.TrialForm.missingButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Displays a message box with the missing information
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="F:ExperimentBuilder.TrialForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ExperimentBuilder.TrialForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ExperimentBuilder.TrialForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:ExperimentBuilder.AboutForm">
+            <summary>
+            This class display a window with a web-page containing information about the programm etc.
+            </summary>
+        </member>
+        <member name="F:ExperimentBuilder.AboutForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ExperimentBuilder.AboutForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ExperimentBuilder.AboutForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:ExperimentBuilder.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:ExperimentBuilder.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:ExperimentBuilder.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:ExperimentBuilder.SessionDescriptor">
+            <summary>
+            Descripes the session for an experiment, and contains all the trial blocks for this session. 
+            </summary>
+        </member>
+        <member name="P:ExperimentBuilder.SessionDescriptor.NumberTrials">
+            <summary>
+            Number of trial blocks for this session
+            </summary>
+        </member>
+        <member name="P:ExperimentBuilder.SessionDescriptor.TrialList">
+            <summary>
+            A list of all trial blocks of this session
+            </summary>
+        </member>
+        <member name="F:ExperimentBuilder.NameForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ExperimentBuilder.NameForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ExperimentBuilder.NameForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:ExperimentBuilder.NameForm.#ctor(ExperimentBuilder.ExperimentDescriptor)">
+            <summary>
+            Display a pop-up window which waits for a valid name of the experiment and starts the creation process.
+            </summary>
+            <param name="experiment">The experiment dataa</param>
+        </member>
+        <member name="M:ExperimentBuilder.NameForm.fileNameTextBox_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            When the user enters a name for the experiment, this name is verified if it valid (That means, it is checked
+            if the folder already exists.)
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ExperimentBuilder.NameForm.okButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            After clicking on OK, the creation of folders and files for the experiment can be started. (In a parallel thread).
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.NameForm.deleteButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            When the experiment name already exists, the Delete Button can be used to delete that folder. 
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.NameForm.backgroundWorker_DoWork(System.Object,System.ComponentModel.DoWorkEventArgs)">
+            <summary>
+            The generation of the files in a parallel Thread. 
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.NameForm.backgroundWorker_RunWorkerCompleted(System.Object,System.ComponentModel.RunWorkerCompletedEventArgs)">
+            <summary>
+            Delegate which is called after the generation of the files is completed. 
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.NameForm.deleteBackgroundWorker_DoWork(System.Object,System.ComponentModel.DoWorkEventArgs)">
+            <summary>
+            Starts the deletion of an existing experiment folder. 
+            </summary>
+            <param name="sender">Not used</param>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:ExperimentBuilder.NameForm.deleteBackgroundWorker_RunWorkerCompleted(System.Object,System.ComponentModel.RunWorkerCompletedEventArgs)">
+            <summary>
+            Delegate which is called after the deletion of the folder is completed.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:ExperimentBuilder.MObjectDescriptor">
+            <summary>
+            This class represents an object which is displayed in a trial. It contains information about its type (whether if it a 
+            rectangle, an ellipse or a BMP-File), it movement and start position etc.
+            </summary>
+        </member>
+        <member name="P:ExperimentBuilder.MObjectDescriptor.TargetObject">
+            <summary>
+            Indicates whether the object is a target object or not. (E.g., if it blinks at the start of a trial)
+            </summary>
+        </member>
+        <member name="P:ExperimentBuilder.MObjectDescriptor.Type">
+            <summary>
+            Defines the type of the object. Can be either be "Rectangle/Square", "Ellipse/Circle" or "Bitmap File".
+            </summary>
+        </member>
+        <member name="P:ExperimentBuilder.MObjectDescriptor.Filename">
+            <summary>
+            If the type is "Bitmap File", the path to the File can be defined here. 
+            </summary>
+        </member>
+        <member name="P:ExperimentBuilder.MObjectDescriptor.Width">
+            <summary>
+            If the object is of type "Rectangle/Square" or "Ellipse/Circle", the width/x-radius can be set here.
+            </summary>
+        </member>
+        <member name="P:ExperimentBuilder.MObjectDescriptor.Height">
+            <summary>
+            If the object is of type "Rectangle/Square" or "Ellipse/Circle", the height/y-radius can be set here.
+            </summary>
+        </member>
+        <member name="P:ExperimentBuilder.MObjectDescriptor.Color">
+            <summary>
+            If the object is of type "Rectangle/Square" or "Ellipse/Circle", the color of the object can be set here.
+            </summary>
+        </member>
+        <member name="P:ExperimentBuilder.MObjectDescriptor.MinSpeedVertical">
+            <summary>
+            Defines the minimum speed for vertical movements of the object.
+            </summary>
+        </member>
+        <member name="P:ExperimentBuilder.MObjectDescriptor.MaxSpeedVertical">
+            <summary>
+            Defines the maximum speed for vertical movements of the object.
+            </summary>
+        </member>
+        <member name="P:ExperimentBuilder.MObjectDescriptor.MinSpeedHorizontal">
+            <summary>
+            Defines the minimum speed for horizontal movements of the object. 
+            </summary>
+        </member>
+        <member name="P:ExperimentBuilder.MObjectDescriptor.MaxSpeedHorizontal">
+            <summary>
+            Defines the maximum speed for horizontal movement of the object. 
+            </summary>
+        </member>
+        <member name="P:ExperimentBuilder.MObjectDescriptor.StartPanel">
+            <summary>
+            Defines, in which area of the screen (e.g, upper right/left, bottom right/left corner). Possible values are either 1, 2, 3 or 4.
+            </summary>
+        </member>
+        <member name="T:ExperimentBuilder.ExperimentDescriptor">
+            <summary>
+            Contains information about the experiment and the a list of all session. To make life easier, there is only one Session 
+            per Experiment. 
+            </summary>
+        </member>
+        <member name="P:ExperimentBuilder.ExperimentDescriptor.SessionList">
+            <summary>
+            The SessionList property contains the session belonging to the experiment. It can contain only one session. (But could 
+            be easily extended to a list later.)
+            </summary>
+        </member>
+        <member name="P:ExperimentBuilder.ExperimentDescriptor.DisplayX">
+            <summary>
+            The width in pixel of the resolution for the experiment.
+            </summary>
+        </member>
+        <member name="P:ExperimentBuilder.ExperimentDescriptor.DisplayY">
+            <summary>
+            The height in pixel of the resolution for the experiment.
+            </summary>
+        </member>
+        <member name="P:ExperimentBuilder.ExperimentDescriptor.NumberSessionFiles">
+            <summary>
+            How many session files the Experiment Builder is supposed to generate
+            </summary>
+        </member>
+        <member name="P:ExperimentBuilder.ExperimentDescriptor.ExperimentFolder">
+            <summary>
+            The folder where the experiments files are generated. 
+            </summary>
+        </member>
+        <member name="P:ExperimentBuilder.ExperimentDescriptor.ExperimentFileName">
+            <summary>
+            The file name of the experiment. 
+            </summary>
+        </member>
+        <member name="P:ExperimentBuilder.ExperimentDescriptor.ExperimentName">
+            <summary>
+            The name of the experiment. 
+            </summary>
+        </member>
+        <member name="P:ExperimentBuilder.ExperimentDescriptor.NumberTrials">
+            <summary>
+            How many trials all sessions are containingl
+            </summary>
+        </member>
+        <member name="T:ExperimentBuilder.TrialDescriptor">
+            <summary>
+            This class is a representant for a block of trials. It stores informations like duration, number of Trials, Trial name, Background Color etc. 
+            for each block of trials. Also it contains a list of all Objects belonging to the trial. 
+            </summary>
+        </member>
+        <member name="P:ExperimentBuilder.TrialDescriptor.Duration">
+            <summary>
+            The duration for each trial in this trial block. The value will store seconds. 
+            </summary>
+        </member>
+        <member name="P:ExperimentBuilder.TrialDescriptor.NumberTrials">
+            <summary>
+            The number of trials this block contains.
+            </summary>
+        </member>
+        <member name="P:ExperimentBuilder.TrialDescriptor.TrialName">
+            <summary>
+            The (hopefully) unique name to identify this trial block later in the EyeTracker generated data files. 
+            </summary>
+        </member>
+        <member name="P:ExperimentBuilder.TrialDescriptor.BackgroundColor">
+            <summary>
+            The background color for this block of trials. 
+            </summary>
+        </member>
+        <member name="P:ExperimentBuilder.TrialDescriptor.ForegroundColor">
+            <summary>
+            The foreground color - in this color components of the experiments like the fixation marker or the grid are painted. 
+            </summary>
+        </member>
+        <member name="P:ExperimentBuilder.TrialDescriptor.FixationMarker">
+            <summary>
+            Indicates whether a fixation marker should be displayed or not. 
+            </summary>
+        </member>
+        <member name="P:ExperimentBuilder.TrialDescriptor.GridDisplayHorizontal">
+            <summary>
+            Indicates whether a horizontal grid should be displayed or not. 
+            </summary>
+        </member>
+        <member name="P:ExperimentBuilder.TrialDescriptor.GridDisplayVertical">
+            <summary>
+            Indicates whether a vertical grid should be displayed or not. 
+            </summary>
+        </member>
+        <member name="P:ExperimentBuilder.TrialDescriptor.Bouncing">
+            <summary>
+            Indicates if the objects should bounce off from each other. 
+            </summary>
+        </member>
+        <member name="P:ExperimentBuilder.TrialDescriptor.BouncingDistance">
+            <summary>
+            Distance in pixels the objects should bounce off from each other (if the bouncing property is set.)
+            </summary>
+        </member>
+        <member name="P:ExperimentBuilder.TrialDescriptor.StartingDistance">
+            <summary>
+            The minimum distance in pixels objects should be away from each other at the start of an experiment
+            </summary>
+        </member>
+        <member name="P:ExperimentBuilder.TrialDescriptor.NumberObjects">
+            <summary>
+            The number of objects this trial block contains. 
+            </summary>
+        </member>
+        <member name="P:ExperimentBuilder.TrialDescriptor.MObjectList">
+            <summary>
+            The List which contains all objects for this trial block. 
+            </summary>
+        </member>
+        <member name="M:ExperimentBuilder.Program.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+    </members>
+</doc>
